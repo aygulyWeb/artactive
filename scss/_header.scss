@@ -1,0 +1,378 @@
+@import "_var";
+@import "_fonts";
+@import "_mixins";
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 23px;
+	position: relative;
+	&-wrap {
+		background: url("../images/header-bg-image.webp") no-repeat;
+		background-size: cover;
+	}
+	&__logo {
+		display: block;
+		@include blockFontsfont(18px, $headerLogofont, $blockWhitecolor, uppercase);
+	}
+
+	///////////////////////          МЕНЮ БУРГЕР
+	&__input {
+		display: none;
+	}
+	&__toggle {
+		display: flex;
+		align-items: center;
+		width: 26px;
+		height: 26px;
+		cursor: pointer;
+	}
+	&__toggle > span,
+	&__toggle > span::before,
+	&__toggle > span::after {
+		display: block;
+		position: absolute;
+		width: 26px;
+		height: 3px;
+		background-color: #fff;
+		transition: 0.2s ease-in-out;
+		z-index: 2;
+	}
+	&__toggle > span::before {
+		content: "";
+		top: -8px;
+	}
+	&__toggle > span::after {
+		content: "";
+		top: 8px;
+	}
+
+	&__box {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.8);
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.5s ease;
+	}
+
+	&__submenu {
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 60px 70px;
+		text-align: left;
+		background-color: #fff;
+		transition: transform 0.5s linear;
+		z-index: 5;
+	}
+	// &__list {
+	// 	line-height: 3.5;
+	// }
+	&__link {
+		line-height: 3.5;
+		@include blockFontsfont(13px, $headerMenufont, $headerMenucolor, uppercase);
+	}
+	&__phone {
+		line-height: 6.5;
+		@include blockFontsfont(16px, $headerLogofont, $headerMenucolor, uppercase);
+	}
+	&__button {
+		border: 2px solid $headerBtncolor;
+		border-radius: 15px;
+		padding: 8px 15px;
+		@include blockFontsfont(11px, $headerLogofont, $headerBtncolor, uppercase);
+	}
+	&__input:checked ~ .header__toggle > span {
+		transform: rotate(45deg);
+		background-color: #999;
+	}
+	&__input:checked ~ .header__toggle > span::before {
+		top: 0;
+		transform: rotate(0);
+		background-color: #999;
+	}
+	&__input:checked ~ .header__toggle > span::after {
+		top: 0;
+		transform: rotate(90deg);
+		background-color: #999;
+	}
+	&__input:checked ~ .header__box {
+		visibility: visible;
+		opacity: 1;
+	}
+	///////////////// HEADER CONTENT_IMAGE
+
+	// &__text {
+	// 	display: block;
+	// 	max-width: 290px;
+	// }
+	&__image {
+		img {
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+		}
+	}
+	&__heading {
+		padding-top: 46px;
+		letter-spacing: 2px;
+		line-height: 1.3;
+		max-width: 200px;
+		@include blockFontsfont(36px, $headerHeadingfont, $blockWhitecolor, uppercase);
+	}
+	&__desc {
+		padding-top: 33px;
+		// max-width: 300px;
+		@include blockFontsfont(21px, $headerDescfont, $blockWhitecolor, none);
+	}
+	&__btn {
+		display: block;
+		margin-top: 50px;
+		margin-bottom: 30px;
+		background-color: $headerBtncolor;
+		border-radius: 20px;
+		padding: 15px;
+		text-align: center;
+		letter-spacing: 2px;
+		@include blockFontsfont(16px, $headerMenufont, $blockWhitecolor, uppercase);
+	}
+	&__subtitle {
+		display: block;
+		padding-bottom: 68px;
+		@include blockFontsfont(16px, $headerSubfont, $blockWhitecolor, none);
+	}
+}
+
+////////////////////////      POPUP
+.popup {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	top: 0;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.5s ease;
+	z-index: 5;
+
+	&:target {
+		opacity: 1;
+		visibility: visible;
+	}
+	&:target .popup__content {
+		opacity: 1;
+		transform: translate(0px, 0px);
+	}
+	&__body {
+		min-height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 20px 10px;
+	}
+
+	&__content {
+		background-color: #883eca;
+		color: #fff;
+		border-radius: 8px;
+		padding: 30px 60px;
+		position: relative;
+		opacity: 0;
+		transition: all 0.5s ease;
+		transform: translateX(-100%);
+	}
+	&__close {
+		position: absolute;
+		right: 20px;
+		top: 10px;
+		i {
+			color: #fff;
+		}
+	}
+	&__title {
+		@include blockFontsfont(16px, $popupTitlefont, $blockWhitecolor, none);
+	}
+	&__subtitle {
+		padding-top: 15px;
+		@include blockFontsfont(20px, $headerMenufont, $blockWhitecolor, none);
+	}
+	input::placeholder {
+		@include blockFontsfont(16px, $popupTitlefont, $blockWhitecolor, none);
+		padding: 10px;
+	}
+	input {
+		display: block;
+		width: 100%;
+		margin-top: 46px;
+		outline: none;
+		background: none;
+		border: none;
+		border-bottom: 1px solid #fff;
+		caret-color: #fff;
+		padding: 10px;
+	}
+
+	&__btn {
+		display: block;
+		margin-top: 35px;
+		background-color: $headerBtncolor;
+		border-radius: 20px;
+		padding: 15px;
+		text-align: center;
+		letter-spacing: 2px;
+		@include blockFontsfont(16px, $headerMenufont, $blockWhitecolor, uppercase);
+	}
+}
+
+///////////////////////////////////         POPUP END
+@media (min-width: 320px) {
+	.header {
+		&__content {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		&__text {
+			max-width: 290px;
+		}
+	}
+}
+@media (min-width: 750px) {
+	.header {
+		&-wrap {
+			height: 120vh;
+		}
+		&__submenu {
+			width: 50%;
+			transform: translateX(100%);
+		}
+		&__content {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-evenly;
+			align-items: center;
+		}
+		&__page-down {
+			margin-top: 24px;
+			margin-bottom: 60px;
+			border: 3px solid #fff;
+			border-radius: 20px;
+			margin: 0 auto;
+			position: relative;
+			width: 18px;
+			height: 30px;
+			&:before {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 30%;
+				left: 50%;
+				// transform: translate(50%, 50%);
+				width: 2px;
+				height: 5px;
+				background-color: #fff;
+				animation: line 1s infinite ease-in-out;
+			}
+		}
+	}
+	@keyframes line {
+		0% {
+			transform: translateY(-100%);
+		}
+		50% {
+			transform: translateY(100%);
+		}
+		100% {
+			transform: translateY(-100%);
+		}
+	}
+}
+@media (min-width: 1024px) {
+	.header {
+		padding-top: 72px;
+		&__toggle {
+			display: none;
+		}
+		&__desc {
+			padding-top: 55px;
+			max-width: 300px;
+			display: block;
+		}
+		&__text {
+			max-width: 600px;
+		}
+		&__btn {
+			display: inline-block;
+			margin-bottom: 0;
+			margin-top: 85px;
+		}
+		&__subtitle {
+			display: inline-block;
+			padding-bottom: 0;
+			max-width: 230px;
+			padding-left: 15px;
+		}
+		&__box {
+			position: absolute;
+			top: 100%;
+			left: 20%;
+			width: 0;
+			height: 0;
+			background-color: none;
+			opacity: 1;
+			visibility: visible;
+			transition: none;
+		}
+
+		&__submenu {
+			display: flex;
+			align-items: center;
+			position: static;
+			top: 0;
+			left: 0;
+			width: 0;
+			height: 0;
+			margin: 0;
+			padding: 0;
+			text-align: right;
+			background-color: none;
+			transition: none;
+			z-index: 0;
+		}
+		&__list {
+			padding-left: 50px;
+		}
+		&__link {
+			display: block;
+			width: 50px;
+			line-height: 0;
+			color: $blockWhitecolor;
+		}
+		&__phone {
+			width: 150px;
+			display: block;
+			line-height: 0;
+			color: $blockWhitecolor;
+		}
+		&__button {
+			width: 150px;
+			display: block;
+			color: $blockWhitecolor;
+			border-color: $blockWhitecolor;
+		}
+		&__page-down {
+			margin-top: 70px;
+		}
+	}
+}

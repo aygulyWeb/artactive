@@ -1,0 +1,32 @@
+doctype html
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		link(rel="stylesheet", href="css/normalize.css")
+		link(rel="stylesheet", href="css/style.css")
+		link(rel="stylesheet", href="libs/fontawesome/css/all.min.css")
+		link(rel="stylesheet", href="libs/slick/css/slick.css")
+		title Artactive
+
+	body 
+		include modules/header
+		main 
+			include modules/about
+			include modules/services
+			include modules/interier
+			include modules/poligraf
+			include modules/testimonials
+			include modules/faq
+			include modules/map
+		include modules/footer
+		|
+		|
+		//- script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMw8vOhDIPR0nvpEUUurvA9PavOOYuXrM&callback=initMap&libraries=&v=weekly", async)
+		script(src='libs/slick/js/jquery-3.3.1.js')
+		script(src='libs/slick/js/jquery-migrate-3.1.0.js')
+		script(src='libs/slick/js/slick.min.js')
+		script(src='js/script.js')
+		 
+			

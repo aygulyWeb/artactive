@@ -1,0 +1,223 @@
+@import "_var";
+@import "_fonts";
+@import "_mixins";
+
+.about {
+	padding-top: 40px;
+	padding-bottom: 53px;
+	.block__subtitle {
+		padding-top: 34px;
+		padding-bottom: 43px;
+	}
+
+	&__scheme {
+		padding-top: 40px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		z-index: 5;
+	}
+	&__item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__image {
+		width: 106px;
+		height: 106px;
+		background-color: $aboutSchemebg;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	&__desc {
+		padding-top: 14px;
+		line-height: 1.5;
+		width: 130px;
+		text-align: center;
+		@include blockFontsfont(13px, $headerSubfont, $aboutTextcolor, none);
+	}
+}
+@media (min-width: 320px) {
+	.about {
+		&__movelinesm {
+			position: absolute;
+			top: 15%;
+			left: 18%;
+			z-index: -2;
+		}
+		&__item:nth-child(2) {
+			padding-top: 45px;
+			padding-left: 190px;
+		}
+		&__item:nth-child(3) {
+			padding-right: 164px;
+		}
+		&__item:nth-child(4) {
+			padding-top: 53px;
+		}
+		&__movelinemd {
+			display: none;
+		}
+		&__movelinelg {
+			display: none;
+		}
+		.arrowsm {
+			position: absolute;
+			top: 0;
+			left: 0;
+			offset-path: path(
+				"M57 1L187.757 111.467C208.855 129.291 205.97 162.626 182.123 176.559L20.5705 270.957C-2.00288 284.147 -6.06182 315.091 12.3462 333.657L82.0231 403.929C89.0824 411.049 93.2106 420.56 93.5901 430.579L98 547"
+			);
+			animation: move 10s linear infinite;
+		}
+		@keyframes move {
+			100% {
+				offset-distance: 100%;
+			}
+		}
+	}
+}
+@media (min-width: 480px) {
+	.about {
+		&__movelinesm {
+			position: absolute;
+			top: 14%;
+			left: 28%;
+		}
+		&__item:nth-child(2) {
+			padding-top: 45px;
+			padding-left: 200px;
+		}
+		&__item:nth-child(3) {
+			padding-right: 220px;
+		}
+		&__item:nth-child(4) {
+			padding-top: 50px;
+		}
+	}
+}
+
+@media (min-width: 750px) {
+	.about {
+		padding-top: 51px;
+		padding-bottom: 140px;
+		&__scheme {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+			flex-basis: 672px;
+		}
+		&__item:nth-child(1) {
+			padding-top: 52px;
+			padding-left: 167px;
+		}
+		&__item:nth-child(2) {
+			padding-top: 0px;
+			padding-left: 565px;
+		}
+		&__item:nth-child(3) {
+			padding-right: 0px;
+		}
+		&__item:nth-child(4) {
+			padding-top: 0px;
+			padding-left: 373px;
+		}
+		.block__subtitle {
+			padding-top: 58px;
+		}
+		&__movelinesm {
+			display: none;
+		}
+		&__movelinelg {
+			display: none;
+		}
+		&__movelinemd {
+			display: block;
+			position: absolute;
+			top: 15%;
+			left: 5%;
+			z-index: -2;
+		}
+		.arrowmd {
+			position: absolute;
+			top: 0;
+			left: 0;
+			offset-path: path(
+				"M213 1L602.685 128.752C630.99 138.032 629.933 178.431 601.181 186.217L295.885 268.885L22.4174 352.907C-4.31232 361.119 -6.26147 398.21 19.4603 409.179L413 577"
+			);
+			animation: move 10s linear infinite;
+		}
+		@keyframes move {
+			100% {
+				offset-distance: 100%;
+			}
+		}
+	}
+}
+
+@media (min-width: 1024px) {
+	.about {
+		padding-top: 108px;
+		padding-bottom: 157px;
+		display: flex;
+		justify-content: space-between;
+		&__content {
+			flex-basis: 40%;
+			order: 2;
+		}
+		&__scheme {
+			padding-top: 0;
+			flex-basis: 50%;
+		}
+		&__item:nth-child(1) {
+			padding-top: 0px;
+			padding-left: 192px;
+		}
+		&__item:nth-child(2) {
+			padding-top: 0px;
+			padding-left: 401px;
+		}
+		&__item:nth-child(3) {
+			padding-right: 0px;
+		}
+		&__item:nth-child(4) {
+			padding-top: 0px;
+			padding-left: 230px;
+		}
+		.block__subtitle {
+			padding-top: 82px;
+			padding-bottom: 60px;
+		}
+		&__movelinemd {
+			display: none;
+		}
+		&__movelinelg {
+			display: block;
+			position: absolute;
+			top: 5%;
+			left: 14%;
+			z-index: -2;
+		}
+		.arrowlg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			offset-path: path(
+				"M136.825 1L390.303 127.261C413.132 138.632 412.259 171.494 388.86 181.639L187.611 268.885L17.1053 354.383C-3.23463 364.582 -5.26062 392.826 13.4154 405.824L259.371 577"
+			);
+			animation: move 10s linear infinite;
+		}
+		@keyframes move {
+			100% {
+				offset-distance: 100%;
+			}
+		}
+	}
+}

@@ -1,0 +1,49 @@
+header.header-wrap#header 
+	.container
+		.header  
+			a.header__logo(href="#") artactive 
+			.header__menu 
+				input(type="checkbox" id="burger" class="header__input")
+				label(for="burger" class="header__toggle")
+					span
+				.header__box
+					ul.header__submenu 
+						li.header__list 
+							a.header__link(href="#") о нас  
+						li.header__list 
+							a.header__link(href="#") услуги 
+						li.header__list 
+							a.header__link(href="#") отзывы 
+						li.header__list 
+							a.header__link(href="#") faq 
+						li.header__list 
+							a.header__link(href="#") контакты 
+						li.header__list 
+							a.header__phone(href="tel:+79201488131") +7 (920) 148 81 31  
+						li.header__list 
+							a.header__button(href="#popup") заказать звонок
+		.popup#popup 
+			.popup__body 
+				.popup__content 
+					a.popup__close(href="#header") <i class="fas fa-times"></i>
+					.popup__title Есть вопросы? 
+					.popup__subtitle Закажите звонок
+					form.popup__form(action="#") 
+						input(type="text" class="popup__name" placeholder="Серге")
+						input(type="text" class="popup__phone" placeholder="Телефон")
+					a.popup__btn(href="#") отправить 
+		.header__content 
+			.header__image 
+				img(src="images/header-image.webp", alt="picture")
+			.header__text 
+				.header__heading размер не имеет значение!
+				.header__desc Оперативная полиграфия и широкоформатная печать любого размера
+				|
+				| 
+				a.header__btn(href="#") заказать печать
+				|
+				|
+				span.header__subtitle с доставкой по Ярославлю и Ярославской области
+		.header__page-down
+			
+					

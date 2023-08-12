@@ -1,0 +1,175 @@
+@import "_var";
+@import "_fonts";
+@import "_mixins";
+
+.faq {
+	padding-top: 40px;
+	&-wrap {
+		margin-top: 137px;
+		padding-bottom: 60px;
+	}
+	&__title {
+		display: block;
+		padding-top: 40px;
+		@include blockFontsfont(24px, $headerDescfont, $aboutSubcolor, none);
+	}
+	&__text {
+		display: block;
+		padding-top: 34px;
+		line-height: 1.8;
+		@include blockFontsfont(14px, $aboutTextfont, $aboutTextcolor, none);
+	}
+	&__form {
+		background-color: $faqFormbg;
+		border-radius: 10px;
+		padding: 33px 22px;
+		margin-top: 56px;
+		position: relative;
+		box-shadow: 0px 20px 20px #cfbbd1;
+		overflow: hidden;
+		&:before {
+			content: "";
+			position: absolute;
+			top: -10%;
+			left: 70%;
+			width: 100%;
+			height: 100%;
+			background: url("../images/faq-img.png") top left/50% no-repeat;
+		}
+	}
+	&-form__title {
+		@include blockFontsfont(16px, $popupTitlefont, $blockWhitecolor, none);
+	}
+	&__subtitle {
+		padding-top: 15px;
+		@include blockFontsfont(24px, $headerMenufont, $blockWhitecolor, none);
+	}
+	input::placeholder {
+		@include blockFontsfont(16px, $popupTitlefont, $blockWhitecolor, capitalize);
+		padding: 10px;
+	}
+	input {
+		display: block;
+		width: 100%;
+		margin-top: 38px;
+		outline: none;
+		background: none;
+		border: none;
+		border-bottom: 1px solid $poligrafInputcolor;
+		caret-color: $poligrafInputcolor;
+		padding: 10px;
+	}
+
+	&__btn {
+		display: block;
+		margin-top: 35px;
+		background-color: $headerBtncolor;
+		border-radius: 20px;
+		padding: 15px;
+		text-align: center;
+		letter-spacing: 2px;
+		@include blockFontsfont(16px, $headerMenufont, $blockWhitecolor, uppercase);
+	}
+}
+@media (min-width: 750px) {
+	.faq {
+		&-wrap {
+			margin-top: 150px;
+			padding-bottom: 100px;
+		}
+		&__form {
+			padding: 47px 37px;
+			&:before {
+				top: -30%;
+				left: 65%;
+				background: url("../images/faq-img.png") top left/40% no-repeat;
+			}
+			&:after {
+				content: "";
+				position: absolute;
+				top: 40%;
+				left: 50%;
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				transform: rotate(130deg);
+				background: radial-gradient(
+					rgba(136, 62, 202, 0.5) 0%,
+					rgba(136, 62, 202, 0.5) 0px,
+					rgba(255, 255, 255, 0.1) 100%
+				);
+			}
+		}
+
+		form {
+			display: flex;
+			justify-content: space-between;
+
+			width: 100%;
+		}
+		input {
+			flex-basis: 30%;
+		}
+		&__btn {
+			flex-basis: 30%;
+			z-index: 99;
+		}
+	}
+}
+@media (min-width: 1024px) {
+	.faq {
+		&-wrap {
+			margin-top: 200px;
+			padding-bottom: 170px;
+		}
+		&__form {
+			padding: 45px 68px;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+
+			&:before {
+				top: 0%;
+				left: 3%;
+				background: url("../images/faq-img.png") top left/auto no-repeat;
+			}
+			&:after {
+				content: "";
+				position: absolute;
+				top: 40%;
+				left: 40%;
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				transform: rotate(130deg);
+				background: radial-gradient(
+					rgba(136, 62, 202, 0.5) 0%,
+					rgba(136, 62, 202, 0.5) 0px,
+					rgba(255, 255, 255, 0.1) 100%
+				);
+			}
+		}
+		&__list {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			li {
+				flex: 0 0 48%;
+			}
+		}
+
+		form {
+			display: flex;
+			justify-content: space-between;
+			width: 70%;
+		}
+		input {
+			flex-basis: 30%;
+		}
+		&__btn {
+			flex-basis: 30%;
+			z-index: 99;
+		}
+	}
+}

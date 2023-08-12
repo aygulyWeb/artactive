@@ -1,0 +1,46 @@
+@import "_var";
+@import "_fonts";
+@import "_mixins";
+
+.map {
+	position: relative;
+	&__content {
+		position: absolute;
+		top: 20%;
+		left: 5%;
+		right: 5%;
+		max-width: 287px;
+		background-color: #fff;
+		box-shadow: 0 0 10px #999;
+		border-radius: 10px;
+	}
+	&__contacts {
+		padding: 45px 36px;
+	}
+	&__link {
+		display: block;
+		padding-top: 30px;
+		line-height: 1.5;
+		@include blockFontsfont(14px, $aboutTextfont, $aboutTextcolor, none);
+		i {
+			color: $aboutHeadingcolor;
+			font-size: 18px;
+			padding-right: 12px;
+		}
+	}
+}
+
+@media (min-width: 1024px) {
+	.map__content {
+		position: absolute;
+		left: 15%;
+		max-width: 454px;
+		min-height: 383px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.map__contacts {
+		padding: 84px 88px;
+	}
+}

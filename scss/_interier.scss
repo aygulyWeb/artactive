@@ -1,0 +1,110 @@
+@import "_var";
+@import "_fonts";
+@import "_mixins";
+
+.interier {
+	&-wrap {
+		padding-top: 50px;
+		position: relative;
+		z-index: -5;
+		overflow: hidden;
+	}
+
+	&__btn {
+		display: block;
+		margin-top: 50px;
+		margin-bottom: 30px;
+		background-color: $headerBtncolor;
+		border-radius: 20px;
+		padding: 15px;
+		text-align: center;
+		letter-spacing: 2px;
+		@include blockFontsfont(16px, $headerMenufont, $blockWhitecolor, uppercase);
+	}
+}
+@media (min-width: 320px) {
+	.interier {
+		padding-top: 73px;
+		&__image {
+			position: relative;
+			padding-bottom: 200px;
+			&::before {
+				content: "";
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 50%;
+				left: 15%;
+				background: url("../images/interier-sofa-xs.png") no-repeat;
+				z-index: -8;
+			}
+		}
+	}
+}
+@media (min-width: 480px) {
+	.interier {
+		padding-top: 73px;
+		&__image {
+			&::before {
+				position: absolute;
+				top: 45%;
+				left: 45%;
+			}
+		}
+	}
+}
+
+@media (min-width: 750px) {
+	.interier {
+		padding-top: 150px;
+		max-width: 80%;
+
+		&__btn {
+			width: 238px;
+		}
+		&__image {
+			position: relative;
+			padding-bottom: 300px;
+
+			&::before {
+				position: absolute;
+				top: 20%;
+				left: 32%;
+				background: url("../images/interier-sofa-sm.png") no-repeat;
+			}
+		}
+	}
+}
+
+@media (min-width: 1024px) {
+	.interier {
+		padding-top: 120px;
+		max-width: 50%;
+		margin-left: 600px;
+		&-wrap {
+			.block__number {
+				top: 10%;
+				left: 46%;
+			}
+		}
+		&__content {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+		}
+
+		&__btn {
+			width: 238px;
+		}
+		&__image {
+			position: relative;
+			padding-bottom: 500px;
+			&::before {
+				position: absolute;
+				top: 0%;
+				left: -10%;
+				background: url("../images/interier-sofa-lg.png") 50% 50% / auto auto no-repeat;
+			}
+		}
+	}
+}

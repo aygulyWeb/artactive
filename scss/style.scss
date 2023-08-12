@@ -1,0 +1,111 @@
+// Блоки
+@import "_header";
+@import "_about";
+@import "_services";
+@import "_interier";
+@import "_poligraf";
+@import "_testimonials";
+@import "_faq";
+@import "_map";
+@import "_footer";
+
+// Переменные
+
+@import "_var";
+@import "_fonts";
+@import "_mixins";
+
+.container {
+	max-width: 1170px;
+	margin: 0 auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.block__heading {
+	@include blockFontsfont(30px, $aboutHeadingfont, $aboutHeadingcolor, capitalize);
+}
+.block__subtitle {
+	@include blockFontsfont(24px, $headerDescfont, $aboutSubcolor, none);
+}
+.block__text {
+	line-height: 1.8;
+	@include blockFontsfont(14px, $aboutTextfont, $aboutTextcolor, none);
+	span {
+		padding-top: 36px;
+		display: inline-block;
+	}
+}
+.block__list {
+	list-style-type: disc;
+}
+
+.block__number {
+	@include blockFontsfont(200px, $blockNumberfont, $blockWhitecolor, capitalize);
+	text-shadow: 0px 0px 20px #f6f2f7;
+	padding-left: 20px;
+	z-index: -2;
+	position: absolute;
+	top: 12%;
+	left: 10%;
+}
+
+.block__line {
+	&:before {
+		content: "";
+		position: absolute;
+		top: -5%;
+		left: 50%;
+		width: 2px;
+		height: 83px;
+		background-color: #883eca;
+		margin: 5px;
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		top: -11%;
+		left: 50%;
+		width: 2px;
+		height: 83px;
+		background-color: #883eca;
+	}
+}
+@media (min-width: 320px) {
+	.block__line {
+		display: none;
+	}
+}
+@media (min-width: 750px) {
+	.container {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.block__line {
+		display: block;
+		z-index: 99;
+	}
+
+	.block__number {
+		top: 18%;
+		left: 5%;
+	}
+}
+@media (min-width: 991px) {
+	.block__number {
+		top: 20%;
+		left: 7%;
+	}
+}
+// @media (min-width: 1024px) {
+// 	.block__number {
+// 		top: 10%;
+// 		left: 46%;
+// 	}
+// }
+a {
+	text-decoration: none;
+}
+li {
+	list-style-type: none;
+}
