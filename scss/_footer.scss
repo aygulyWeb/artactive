@@ -3,56 +3,56 @@
 @import "_mixins";
 
 .footer {
-	&-wrap {
-		padding-top: 45px;
-		padding-bottom: 52px;
-		background-color: $footerBgcolor;
-	}
-	&__policy {
-		@include blockFontsfont(13px, $footerTextfont, $blockWhitecolor, none);
-		border-bottom: 1px solid #fff;
-	}
-	&__copr {
-		padding-top: 40px;
-		@include blockFontsfont(13px, $footerTextfont, $blockWhitecolor, none);
-	}
+  &-wrap {
+    padding-top: 45px;
+    padding-bottom: 52px;
+    background-color: $footerBgcolor;
+  }
+  &__policy {
+    @include blockFontsfont(13px, $footerTextfont, $blockWhitecolor, none);
+    border-bottom: 1px solid #fff;
+  }
+  &__copr {
+    padding-top: 40px;
+    @include blockFontsfont(13px, $footerTextfont, $blockWhitecolor, none);
+  }
 }
 @media (min-width: 320px) {
-	.footer {
-		text-align: center;
-		&__author {
-			display: none;
-		}
-	}
+  .footer {
+    text-align: center;
+    &__author {
+      display: none;
+    }
+  }
 }
 @media (min-width: 750px) {
-	.footer {
-		text-align: center;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		&-wrap {
-			padding-top: 23px;
-			padding-bottom: 30px;
-		}
-		&__policy {
-			order: 2;
-		}
-		&__copr {
-			padding-top: 0px;
-		}
-	}
+  .footer {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-wrap {
+      padding-top: 23px;
+      padding-bottom: 30px;
+    }
+    &__policy {
+      order: 2;
+    }
+    &__copr {
+      padding-top: 0px;
+    }
+  }
 }
 @media (min-width: 1024px) {
-	.footer {
-		&-wrap {
-			padding-top: 18px;
-			padding-bottom: 23px;
-		}
-		&__author {
-			@include blockFontsfont(13px, $footerTextfont, $blockWhitecolor, none);
-			display: block;
-			order: 3;
-		}
-	}
+  .footer {
+    &-wrap {
+      padding-top: 18px;
+      padding-bottom: 23px;
+    }
+    &__author {
+      @include blockFontsfont(13px, $footerTextfont, $blockWhitecolor, none);
+      display: block;
+      order: 3;
+    }
+  }
 }
